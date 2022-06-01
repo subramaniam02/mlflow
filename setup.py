@@ -110,8 +110,11 @@ class ListDependencies(distutils.cmd.Command):
 setup(
     name="mlflow" if not _is_mlflow_skinny else "mlflow-skinny",
     version=version,
-    packages=find_packages(exclude=["tests", "tests.*"]),
-    package_data={"mlflow": js_files + models_container_server_files + alembic_files + extra_files}
+    packages=
+    find_packages(exclude=["tests", "tests.*"]),
+    package_data={"mlflow": js_files +
+    
+     models_container_server_files + alembic_files + extra_files}
     if not _is_mlflow_skinny
     # include alembic files to enable usage of the skinny client with SQL databases
     # if users install sqlalchemy, alembic, and sqlparse independently
