@@ -10,7 +10,6 @@ import string
 from random import random as rand
 
 
-
 def log_metrics(metrics):
     for k, values in metrics.items():
         for v in values:
