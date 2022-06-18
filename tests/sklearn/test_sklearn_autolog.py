@@ -1,4 +1,3 @@
-# subra:TODO
 import functools
 import inspect
 from unittest import mock
@@ -33,7 +32,6 @@ from mlflow.sklearn.utils import (
     _get_arg_names,
     _log_child_runs_info,
 )
-from mlflow.tracking.client import MlflowClient
 from mlflow.utils import _truncate_dict
 from mlflow.utils.mlflow_tags import MLFLOW_AUTOLOGGING
 from mlflow.utils.validation import (
@@ -2002,5 +2000,5 @@ def test_autolog_registering_model():
     with mlflow.start_run():
         sklearn.cluster.KMeans().fit(*get_iris())
 
-        registered_model = MlflowClient().get_registered_model(registered_model_name)
+        registered_model = mlflow.MlflowClient().get_registered_model(registered_model_name)
         assert registered_model.name == registered_model_name
